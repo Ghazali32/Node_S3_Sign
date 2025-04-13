@@ -31,7 +31,7 @@ app.post('/api/get-converted-presigned-url', async (req, res) => {
       Key: key
     });
 
-    const url = await getSignedUrl(s3, command, { expiresIn: 60 }); // 60s expiry
+    const url = await getSignedUrl(s3, command, { expiresIn: 3600 }); // 60s expiry
     console.log(url)
 
     return res.json({ url });
